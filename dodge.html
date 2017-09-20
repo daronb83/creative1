@@ -10,11 +10,11 @@
   <div id="bg" class="page-center bg-white pad-none" style="height:100%">
 
     <div style="height:150"></br>
-      <h1 class="font-center font-big">Dodge</h1></br>
+      <h1 class="font-center font-big">Dodge!</h1></br>
     </div>
 
     <div id="playArea" class="page-center" onclick="play(event)" onmousemove="move(event)">
-      <div id="bomb1" class="bomb bg-dark round"></div>
+      <div id="bomb1" class="bomb round"></div>
         </br></br></br></br></br></br>
 
     </div>
@@ -52,6 +52,7 @@
     score = 0;
     speed = 5;
     var bomb = document.getElementById("bomb1");
+    bomb.style.backgroundColor="#455A64";
     document.getElementById("over").style.zIndex="-1";
     document.getElementById("click").style.zIndex="-1";
     document.getElementById("click").classList.add("text-light");
@@ -79,7 +80,6 @@
 
       if ((Math.abs(bombX + xMargin - x) < 15) && (Math.abs(bombY + yMargin - y) < 15)) {
         bomb.classList.add("explode");
-        document.getElementById("bod").classList.remove("blinks");
         document.getElementById("bg").classList.add("fade");
         document.getElementById("over").style.zIndex="5";
         document.getElementById("over").classList.add("text-fade");
@@ -87,6 +87,7 @@
         document.getElementById("click").classList.add("text-fade");
         document.getElementById("click").classList.remove("text-light");
         document.getElementById("playArea").classList.add("shake");
+        bomb.style.backgroundColor="#455A64";
         clearInterval(id);
       }
       else {
@@ -98,9 +99,11 @@
       score = Math.round(loops / 10 * speed);
       if (loops > 500 && loops < 1000) {
         speed = 8;
+        bomb.style.backgroundColor="red";
       }
       if (loops > 1000) {
         speed = Math.round(loops / 250 + 10);
+        bomb.style.backgroundColor="orange";
       }
     }
   }
