@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <ul id="navbar" class="navbar fixed bg-white">
+    <li><a id="act" href="#header" class="left active navbutton bg-mid bg-dark-hover text-light">
+      Daron Barnes: Lab 1</a></li>
+    <li><a href="#about" class="left navbutton text-dark">
+      About Me</a></li>
+    <li><a href="https://github.com" class="left navbutton text-dark">
+      Github</a></li>
+    <li><a href="https://www.linkedin.com/" class="left navbutton text-dark">
+      Linkedin</a></li>
+    <li><a href="https://www.w3schools.com/cssref/default.asp" class="left navbutton text-dark">
+      W3 CSS Reference</a></li>
+    <li onclick="colorChange()" class="navbutton right text-dark">
+      Change Color Scheme</li>
+  </ul>
+
+  <!-- Header -->
+  <img id="header" src="img/water.jpg" class="header" alt="forest banner"/>
+
+  <!-- Cards -->
+  <img class="card-3" src="img/glass-fox.jpg" alt="fox"/>
+
+  <div id="whiteCard" class="card-60 bg-white right inline text-mid">
+    <h1 class="font-center" style="font-size:50px;"></br>Daron Barnes Lab 1</h1>
+    <h1 class="font-big">Project Links</br></h1>
+    <ol class="font-left font-medium" style="margin: 50px">
+      <li><a href="hello.html">Hello</a></li>
+      <li><a href="section2.html">Section 2</a></li>
+      <li><a href="js.html">CSS and JavaScript</a></li>
+      <li>To be continued...</li>
+    </ol>
+    <h1 class="font-big font-center"></br>Work Experience</h1>
+    <ul class="font-left font-medium"  style="margin: 50px">
+      <li>Webmaster for Brigham Yount University (Jan 2017 - Current)</li>
+      <li>Support Team Lead for Entrata (2015-2016)</li>
+      <li>Associate / Webmaster for Ironwood Experts Consulting (2014-2015)</li>
+      </br></br></p>
+  </div>
+
+  <h1 id="about" class="text-mid font-center"></br>About Me</h1>
+  <p id="me" class="font-center font-small text-mid" style="padding-left:20px; overflow-wrap:break-word;">
+    Daron Barnes is a CS student at BYU with a minor in
+    Psycology. He is currently working as the webmaster for the CS department. Daron recently returned
+    to BYU after spending some time away, and now lives in Pleasant Grove with his wife and three
+    children.</br></br></br>-</p>
+  </br>
+  </br>
+
+  <script>
+    function colorChange() {
+      document.getElementById("whiteCard").classList.toggle("bg-white");
+      document.getElementById("whiteCard").classList.toggle("bg-light");
+      document.getElementById("whiteCard").classList.toggle("text-mid");
+      document.getElementById("whiteCard").classList.toggle("text-dark");
+      document.getElementById("whiteCard").classList.toggle("opacity-min");
+
+      document.getElementById("navbar").classList.toggle("bg-mid");
+      document.getElementById("navbar").classList.toggle("bg-dark");
+
+      document.getElementById("act").classList.toggle("bg-mid");
+      document.getElementById("act").classList.toggle("bg-dark");
+      document.getElementById("act").classList.toggle("bg-mid-hover");
+      document.getElementById("act").classList.toggle("bg-dark-hover");
+
+      document.getElementById("about").classList.toggle("text-mid");
+      document.getElementById("me").classList.toggle("text-mid");
+      document.getElementById("about").classList.toggle("text-dark");
+      document.getElementById("me").classList.toggle("text-dark");
+
+      document.body.classList.toggle("bg-light");
+      document.body.classList.toggle("bg-white");
+    }
+  </script>
+
+</body>
+</html>

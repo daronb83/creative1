@@ -1,0 +1,113 @@
+<html>
+<head>
+  <link rel="Stylesheet" type="text/css" href="creative.css" />
+</head>
+<body id="bod" class="background text-dark">
+
+  <h1 id="click" class="font-small font-center fixed-small" onclick="play(event)">Click to Play!</h1>
+  <h1 id="over" class="font-big text-light font-center fixed" style="z-index:0;" onclick="play(event)">Game Over</h1>
+
+  <div id="bg" class="page-center bg-white pad-none" style="height:100%">
+
+    <div style="height:150"></br>
+      <h1 class="font-center font-big">Dodge</h1></br>
+    </div>
+
+    <div id="playArea" class="page-center" onclick="play(event)" onmousemove="move(event)">
+      <div id="bomb1" class="bomb bg-dark round"></div>
+        </br></br></br></br></br></br>
+
+    </div>
+    <p id="demo" class="font-center font-small"></p>
+
+  </div>
+
+  <script>
+  var x = 0;
+  var y = 0;
+  var distance = 0;
+  var xRatio = 0;
+  var yRatio = 0;
+  var width = 0;
+  var yMargin = 150;
+  var xMargin = 0;
+  var loops = 0;
+  var score = 0;
+  var speed = 5;
+  var bombX = 0;
+  var bombY = 0;
+
+  function move(event) {
+    x = event.clientX;
+    y = event.clientY;
+    width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    xMargin = (width-700)/2;
+    distance = Math.sqrt((x-xMargin)*(x-xMargin) + (y-yMargin)*(y-yMargin));
+    xRatio = (x-xMargin)/distance;
+    yRatio = (y-yMargin)/distance;
+  }
+
+  function play(event) {
+    loops = 0;
+    score = 0;
+    speed = 5;
+    var bomb = document.getElementById("bomb1");
+    document.getElementById("over").style.zIndex="-1";
+    document.getElementById("click").style.zIndex="-1";
+    document.getElementById("click").classList.add("text-light");
+    document.getElementById("playArea").classList.remove("shake");
+    document.getElementById("bg").classList.remove("fade");
+    bomb.classList.remove("explode");
+
+    var id = setInterval(frame, 10);
+
+    function frame() {
+      document.getElementById("demo").innerHTML = "Score: " + score + " &nbsp;|&nbsp;&nbspSpeed: " + speed;
+
+      if (bombX + xMargin > x + 5){
+        bombX -= xRatio * speed;
+      }
+      if (bombX + xMargin < x - 15){
+        bombX += xRatio * speed;
+      }
+      if (bombY + yMargin > y + 5){
+        bombY -= yRatio * speed;
+      }
+      if (bombY + yMargin < y - 15){
+        bombY += yRatio * speed;
+      }
+
+      if ((Math.abs(bombX + xMargin - x) < 15) && (Math.abs(bombY + yMargin - y) < 15)) {
+        bomb.classList.add("explode");
+        document.getElementById("bod").classList.remove("blinks");
+        document.getElementById("bg").classList.add("fade");
+        document.getElementById("over").style.zIndex="5";
+        document.getElementById("over").classList.add("text-fade");
+        document.getElementById("click").style.zIndex="5";
+        document.getElementById("click").classList.add("text-fade");
+        document.getElementById("click").classList.remove("text-light");
+        document.getElementById("playArea").classList.add("shake");
+        clearInterval(id);
+      }
+      else {
+        bomb.style.left = bombX + 'px';
+        bomb.style.top = bombY + 'px';
+      }
+
+      loops++;
+      score = Math.round(loops / 10 * speed);
+      if (loops > 500 && loops < 1000) {
+        speed = 8;
+      }
+      if (loops > 1000) {
+        speed = Math.round(loops / 250 + 10);
+      }
+    }
+  }
+
+  function cleanUp() {
+
+  }
+  </script>
+</body>
+</html>

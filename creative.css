@@ -1,0 +1,143 @@
+body { margin: 0;}
+
+/* Page Sections */
+.navbar { list-style-type: none; top: 0; width: 100%; padding: 0; margin-top: 0; overflow: hidden; }
+.navbutton { display: block; text-align: center; text-decoration: none; }
+.header { margin-top:70px; width: 100% }
+.inline { display: inline-block; }
+
+#playArea {
+  width: 700px;
+  height: 600px;
+  position: relative;
+  border: 2px solid black;
+}
+
+.bomb {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
+/* Padding */
+.pad-none           { padding:0px; }
+.pad-light          { padding:4px 8px; }
+.pad                { padding:8px 16px; }
+.pad-heavy          { padding:12px 24px; }
+.pad-4              { padding:16px 16px; }
+.pad-8              { padding:16px 16px; }
+.pad-16, .navbutton { padding:16px 16px; }
+.pad-32             { padding:32px 32px; }
+
+/* Font */
+.font-big     { font-size: 50px; }
+.font-medium  { font-size: 30px; }
+.font-small   { font-size: 20px; }
+.font-center  { text-align: center; }
+.font-left    { text-align: left; }
+.font-right   { text-align: right; }
+
+
+/* Position */
+.fill         { width: 100%; float: none; }
+.left         { float:left; }
+.right        { float:right; }
+.fixed        { position: fixed; }
+.page-center  { max-width: 960px; margin: auto; }
+.abs          { position: absolute; }
+.fixed        { position: fixed; top: 30%; bottom: 45%; right: 40%; left: 40%; }
+.fixed-small  { position: fixed; top: 40%; bottom: 35%; right: 40%; left: 40%; }
+
+
+/* Colors */
+.bg-dark, .bg-dark-hover:hover, .navbutton:hover
+  { background-color: #455A64; }
+.bg-mid, .bg-mid-hover:hover
+  { background-color: #607D8B; }
+.bg-light, .bg-light-hover:hover
+  { background-color: #CFD8DC; }
+.bg-white, .bg-white-hover:hover
+  { background-color: #FFFFFF; }
+.bg-red, .bg-red-hover:hover
+  { background-color: #e00b15; }
+.text-dark, .text-dark-hover:hover
+  { color: #212121; }
+.text-mid, .text-mid-hover:hover
+  { color: #757575; }
+.text-light, .text-light-hover:hover, .navbutton:hover
+  { color: #FFFFFF; }
+.accent, .accent-hover:hover
+  { background-color: #00BCD4; }
+.div-color, .div-color-hover:hover
+  { border-color: #BDBDBD; }
+.background {background: #CFD8DC; }
+
+/* Opacity */
+.opacity-hide, { opacity: 0%; }
+.opacity-max, .opacity-max-hover:hover { opacity: 30% }
+.opacity-min, .opacity-min-hover:hover { opacity: 60% }
+.opacity-off, .opacity-off-hover:hover { opacity: 1 }
+
+/* Card */
+.card .card-3, .card-60, .header, .navbar { box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+.card-3, .card-60 { width: 30%; height: 400px; margin: 16px; margin-top: 34px; display: inline-block; text-align: center; vertical-align: text-top;}
+.card-60 { width: 63%; height: 900px}
+
+/* Effects */
+.round { border-radius: 50% }
+
+.shake { animation: shake 0.5s; animation-iteration-count: 10; }
+@keyframes shake {
+  0% { transform: translate(2px, 2px) rotate(0deg); }
+  10% { transform: translate(-2px, -4px) rotate(-1deg); }
+  20% { transform: translate(-6px, 0px) rotate(1deg); }
+  30% { transform: translate(6px, 4px) rotate(0deg); }
+  40% { transform: translate(2px, -2px) rotate(1deg); }
+  50% { transform: translate(-2px, 4px) rotate(-1deg); }
+  60% { transform: translate(-6px, 2px) rotate(0deg); }
+  70% { transform: translate(6px, 2px) rotate(-1deg); }
+  80% { transform: translate(-2px, -2px) rotate(1deg); }
+  90% { transform: translate(2px, 4px) rotate(0deg); }
+  100% { transform: translate(2px, -4px) rotate(-1deg); }
+}
+
+.explode { animation: explode 5s; animation-iteration-count: 1;}
+@keyframes explode {
+  0%    { transform: translate(0px, 0px); height: 20px; width: 20px; background-color: yellow; }
+  70%   { transform: translate(-120px, -120px); height: 200px; width: 200px; background-color: red; }
+  100%  { transform: translate(0px, 0px); height: 20px; width: 20px; background-color: #455A64; }
+}
+
+.text-fade { animation: text-fade 5s; animation-iteration-count: 1;}
+@keyframes text-fade {
+  0%    { color: #FFFFFF; }
+  70%   { color: #FFFFFF; }
+  100%  { color: #212121; }
+}
+
+.fade { animation: fade 5s; animation-iteration-count: 1; }
+@keyframes fade {
+  0%    { background-color: #FFFFFF; }
+  70%   { background-color: #455A64; }
+  100%  { background-color: #FFFFFF; }
+}
+
+.blinks { animation: blinks 0.5s; animation-iteration-count: infinite; }
+@keyframes blinks {
+  0%    { background: #455A64; }
+  40%    { background: #455A64; }
+  50%   { background: red; }
+  60%    { background: #455A64; }
+  100%  { background: #455A64; }
+}
+
+.blinks2 { animation: blinks2 0.5s; animation-iteration-count: infinite; }
+@keyframes blinks2 {
+  0%    { transform: translate(0px, 0px); height: 20px; width: 20px; background-color: red; }
+  30%   { transform: translate(-7px, -7px); height: 30px; width: 30px; background-color: orange; }
+  45%   { transform: translate(-14px, -14px); height: 40px; width: 40px; background-color: yellow; }
+  50%   { transform: translate(-14px, -14px); height: 40px; width: 40px; background-color: white; }
+  55%   { transform: translate(-14px, -14px); height: 40px; width: 40px; background-color: yellow; }
+  70%   { transform: translate(-7px, -7px); height: 30px; width: 30px; background-color: orange; }
+  100%  { transform: translate(0px, 0px); height: 20px; width: 20px; background-color: red; }
+}

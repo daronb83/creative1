@@ -1,0 +1,61 @@
+
+body { margin: 0;}
+
+/* Page Sections */
+.navbar { list-style-type: none; top: 0; width: 100%; padding: 0; margin-top: 0; overflow: hidden; }
+.navbutton { display: block; text-align: center; text-decoration: none; }
+.header { margin-top:70px; width: 100% }
+.inline { display: inline-block; }
+
+/* Padding */
+.pad-light  { padding:4px 8px; }
+.pad        { padding:8px 16px; }
+.pad-heavy  { padding:12px 24px; }
+.pad-4      { padding:16px 16px; }
+.pad-8      { padding:16px 16px; }
+.pad-16, .navbutton { padding:16px 16px; }
+.pad-32     { padding:32px 32px; }
+
+/* Font */
+.font-big     { font-size: 40px; }
+.font-medium  { font-size: 30px; }
+.font-small   { font-size: 20px; }
+.font-center  { text-align: center; }
+.font-left    { text-align: left; }
+.font-right   { text-align: right; }
+
+
+/* Position */
+.fill   {width: 100%; float: none;}
+.left   {float:left;}
+.right  {float:right;}
+.fixed  {position: fixed;}
+
+/* Colors */
+.bg-dark, .bg-dark-hover:hover, .navbutton:hover
+  { background-color: #455A64; }
+.bg-mid, .bg-mid-hover:hover
+  { background-color: #607D8B; }
+.bg-light, .bg-light-hover:hover
+  { background-color: #CFD8DC; }
+.bg-white, .bg-white-hover:hover
+  { background-color: #FFFFFF; }
+.text-dark, .text-dark-hover:hover
+  { color: #212121; }
+.text-mid, .text-mid-hover:hover
+  { color: #757575; }
+.text-light, .text-light-hover:hover, .navbutton:hover
+  { color: #FFFFFF; }
+.accent, .accent-hover:hover
+  { background-color: #00BCD4; }
+.div-color, .div-color-hover:hover
+  { border-color: #BDBDBD; }
+
+/* Opacity */
+.opacity-max, .opacity-max-hover:hover { opacity: 30% }
+.opacity-min, .opacity-min-hover:hover { opacity: 60% }
+.opacity-off, .opacity-off-hover:hover { opacity: 1 }
+
+.card-3, .card-60, .header, .navbar { box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+.card-3, .card-60 { width: 30%; height: 400px; margin: 16px; margin-top: 34px; display: inline-block; text-align: center; vertical-align: text-top;}
+.card-60 { width: 63%; height: 900px}
