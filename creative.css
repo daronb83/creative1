@@ -1,11 +1,6 @@
-body { margin: 0; font-family: Arial, sans-serif;}
+body { margin: 0;}
 
 /* Page Sections */
-.navbar { list-style-type: none; top: 0; width: 100%; padding: 0; margin-top: 0; overflow: hidden; }
-.navbutton { display: block; text-align: center; text-decoration: none; }
-.header { margin-top:70px; width: 100% }
-.inline { display: inline-block; }
-
 #playArea {
   width: 700px;
   height: 600px;
@@ -29,17 +24,17 @@ body { margin: 0; font-family: Arial, sans-serif;}
 .pad-16, .navbutton { padding:16px 16px; }
 .pad-32             { padding:32px 32px; }
 
-/* Font */
+/* Text - Font */
 .font-big     { font-size: 50px; }
 .font-medium  { font-size: 30px; }
 .font-small   { font-size: 20px; }
 .font-center  { text-align: center; }
 .font-left    { text-align: left; }
 .font-right   { text-align: right; }
-
+.arial        { font-family: Arial, sans-serif; }
 
 /* Position */
-.fill         { width: 100%; float: none; }
+.inline       { display: inline-block; }
 .left         { float:left; }
 .right        { float:right; }
 .fixed        { position: fixed; }
@@ -47,7 +42,6 @@ body { margin: 0; font-family: Arial, sans-serif;}
 .abs          { position: absolute; }
 .fixed        { position: fixed; top: 30%; bottom: 45%; right: 40%; left: 40%; }
 .fixed-small  { position: fixed; top: 40%; bottom: 35%; right: 40%; left: 40%; }
-
 
 /* Colors */
 .bg-dark, .bg-dark-hover:hover, .navbutton:hover
@@ -77,11 +71,6 @@ body { margin: 0; font-family: Arial, sans-serif;}
 .opacity-max, .opacity-max-hover:hover { opacity: 30% }
 .opacity-min, .opacity-min-hover:hover { opacity: 60% }
 .opacity-off, .opacity-off-hover:hover { opacity: 1 }
-
-/* Card */
-.card .card-3, .card-60, .header, .navbar { box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-.card-3, .card-60 { width: 30%; height: 400px; margin: 16px; margin-top: 34px; display: inline-block; text-align: center; vertical-align: text-top;}
-.card-60 { width: 63%; height: 900px}
 
 /* Effects */
 .round { border-radius: 50% }
@@ -122,16 +111,7 @@ body { margin: 0; font-family: Arial, sans-serif;}
   100%  { background-color: #FFFFFF; }
 }
 
-.blinks { animation: blinks 0.5s; animation-iteration-count: infinite; }
-@keyframes blinks {
-  0%    { background: #CFD8DC; }
-  45%    { background: #CFD8DC; }
-  50%   { background: red; }
-  55%    { background: #CFD8DC; }
-  100%  { background: #CFD8DC; }
-}
-
-.blinks2 { animation: blinks2 0.5s; animation-iteration-count: infinite; }
+.blinks { animation: blinks2 0.5s; animation-iteration-count: infinite; }
 @keyframes blinks2 {
   0%    { transform: translate(0px, 0px); height: 20px; width: 20px; background-color: red; }
   30%   { transform: translate(-7px, -7px); height: 30px; width: 30px; background-color: orange; }
